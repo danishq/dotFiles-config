@@ -1,0 +1,46 @@
+window:
+  opacity: 0.9
+  blur: true
+  decorations: none
+  padding:
+    x: 6
+    y: 6
+
+font:
+  normal:
+    family: "VictorMono Nerd Font"
+    style: Regular
+  size: 10.0
+  offset:
+    x: 0
+    y: 0
+
+colors:
+  primary:
+    background: '#2b2b2b'  # dark brownish coffee
+    foreground: '#f5f5dc'  # off-white
+
+  normal:
+    black:   '#2b2b2b'
+    red:     '#b4637a'
+    green:   '#7d8f69'
+    yellow:  '#d3c6aa'
+    blue:    '#8ba4b0'
+    magenta: '#c6a57b'
+    cyan:    '#9ccfd8'
+    white:   '#f5f5dc'
+
+  bright:
+    black:   '#3e3e3e'
+    red:     '#d08770'
+    green:   '#a3be8c'
+    yellow:  '#ebcb8b'
+    blue:    '#81a1c1'
+    magenta: '#b48ead'
+    cyan:    '#88c0d0'
+    white:   '#ffffff'
+
+cursor:
+  style:
+    shape: Block
+    blinking: On
