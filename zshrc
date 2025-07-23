@@ -1,6 +1,8 @@
 # ─── Locale ───────────────────────────────────────────
 export LANG=en_IN.UTF-8
 export LC_ALL=en_IN.UTF-8
+HISTSIZE=200000
+SAVEHIST=200000
 
 # ─── Path ─────────────────────────────────────────────
 export PATH="$HOME/.local/bin:/usr/local/bin:$PATH"
@@ -12,19 +14,19 @@ export PATH="$JAVA_HOME/bin:$M2_HOME/bin:$PATH"
 
 # ─── Conda Initialization ─────────────────────────────
 # Fix for "conda is an alias" issue
-unalias conda 2>/dev/null
-
-__conda_setup="$('/home/danish/miniconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
-if [ $? -eq 0 ]; then
-    eval "$__conda_setup"
-else
-    if [ -f "/home/danish/miniconda3/etc/profile.d/conda.sh" ]; then
-        . "/home/danish/miniconda3/etc/profile.d/conda.sh"
-    else
-        export PATH="/home/danish/miniconda3/bin:$PATH"
-    fi
-fi
-unset __conda_setup
+#unalias conda 2>/dev/null
+#
+#__conda_setup="$('/home/danish/miniconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+#if [ $? -eq 0 ]; then
+#    eval "$__conda_setup"
+#else
+#    if [ -f "/home/danish/miniconda3/etc/profile.d/conda.sh" ]; then
+#        . "/home/danish/miniconda3/etc/profile.d/conda.sh"
+#    else
+#        export PATH="/home/danish/miniconda3/bin:$PATH"
+#    fi
+#fi
+#unset __conda_setup
 
 
 
@@ -51,6 +53,14 @@ promptinit
 setopt AUTO_CD
 setopt AUTO_PUSHD
 setopt PUSHD_IGNORE_DUPS
+bindkey -v
+function zle-line-init zle-keymap-select {
+  RPS1="${${KEYMAP/vicmd/-N-}/(main|viins)/-I-}"
+  RPS2=$RPS1
+  zle reset-prompt
+}
+zle -N zle-line-init
+zle -N zle-keymap-select
 
 # ─── Completion ────────────────────────────────────────
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
@@ -91,3 +101,6 @@ function nvim() {
   command nvim "$@"                  # Launch Neovim with all arguments
   setxkbmap -option                  # Reset Caps Lock back to normal
 }
+
+#Timer
+alias timer="~/timer_final.sh"

@@ -1,37 +1,38 @@
 # Global settings
 separator=true
-separator_block_width=15
+separator_block_width=18
 markup=pango
+font=Ubuntu Mono
 
 [cpu]
-label=  <span color="#98A1BC">CPU:</span>
+label=  <span color="#98A1BC">CPU: </span>
 command=~/.config/i3blocks/cpu_usage.sh
 interval=5
 color=#98A1BC
 
 [memory]
-label=  <span color="#98A1BC">RAM:</span>
-command=free -h | awk '/^Mem/ { print $3 "/" $2 }'
+label=  <span color="#98A1BC">RAM: </span>
+command=free -h | awk '/^Mem/ { print $3 " / " $2 }'
 interval=5
 color=#98A1BC
 [disk]
-label=  <span color="#98A1BC">Disk:</span>
+label=  <span color="#98A1BC">Disk: </span>
 command=df -h / | awk 'NR==2 { print $4 " free" }'
 interval=60
 color=#98A1BC
 [volume]
-label=  <span color="#98A1BC">Vol:</span>
+label=  <span color="#98A1BC"> Vol: </span>
 command=amixer get Master | awk -F'[][]' 'END{ print $2 }'
 interval=2
 signal=10
 color=#98A1BC
 [battery]
-label=  <span color="#98A1BC">Batt:</span>
+label=  <span color="#98A1BC">Batt: </span>
 command=acpi | cut -d "," -f 2,3 | tr -d " "
 interval=30
 color=#98A1BC
 [network]
-label=  <span color="#98A1BC">Net:</span>
+label=  <span color="#98A1BC"> Net: </span>
 command=ip route get 1.1.1.1 | awk '{print $7}'
 interval=10
 color=#98A1BC
