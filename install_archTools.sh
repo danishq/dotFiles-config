@@ -1,6 +1,6 @@
 #!/bin/bash
 
-echo "🔧 Installing CLI productivity tools..."
+echo "🔧 Installing CLI productivity tools...."
 
 # Update system
 sudo pacman -Syu --noconfirm
