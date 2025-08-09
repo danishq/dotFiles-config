@@ -5,39 +5,39 @@ markup=pango
 font=Ubuntu Mono
 
 [cpu]
-label=  <span color="#98A1BC">CPU: </span>
+label=  <span color="#cadaee">CPU: </span>
 command=~/.config/i3blocks/cpu_usage.sh
 interval=5
-color=#98A1BC
+color=#cadaee
 
 [memory]
-label=  <span color="#98A1BC">RAM: </span>
+label=  <span color="#cadaee">RAM: </span>
 command=free -h | awk '/^Mem/ { print $3 " / " $2 }'
 interval=5
-color=#98A1BC
+color=#cadaee
 [disk]
-label=  <span color="#98A1BC">Disk: </span>
+label=  <span color="#cadaee">Disk: </span>
 command=df -h / | awk 'NR==2 { print $4 " free" }'
 interval=60
-color=#98A1BC
+color=#cadaee
 [volume]
-label=  <span color="#98A1BC"> Vol: </span>
+label=  <span color="#cadaee"> Vol: </span>
 command=amixer get Master | awk -F'[][]' 'END{ print $2 }'
 interval=2
 signal=10
-color=#98A1BC
+color=#cadaee
 [battery]
-label=  <span color="#98A1BC">Batt: </span>
+label=  <span color="#cadaee">Batt: </span>
 command=acpi | cut -d "," -f 2,3 | tr -d " "
 interval=30
-color=#98A1BC
+color=#cadaee
 [network]
-label=  <span color="#98A1BC"> Net: </span>
+label=  <span color="#cadaee"> Net: </span>
 command=ip route get 1.1.1.1 | awk '{print $7}'
 interval=10
-color=#98A1BC
+color=#cadaee
 [time]
 label=  
 command=date '+%a %d %b  %I:%M %p '
 interval=6
-color=#98A1BC0
+color=#cadaee

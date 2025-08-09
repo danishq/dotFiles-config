@@ -4,10 +4,12 @@ font pango:Victor Mono 8
 #exec --no-startup-id dex --autostart --environment i3
 exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 exec --no-startup-id nm-applet
-exec --no-startup-id sh -c "sleep 1 && feh --bg-scale ~/Pictures/wallhaven-leaf.jpg"
+exec --no-startup-id sh -c "sleep 1 && feh --bg-scale ~/Pictures/wallhave-shinchan.png"
+
 exec --no-startup-id xsetroot -cursor_name left_ptr
 exec_always --no-startup-id xrdb -merge ~/.Xresources
 exec --no-startup-id blueman-applet
+#exec --no-startup-id ~/Documents/LinuxCommandAndKeyBinds/custom2k.sh 
 #exec --no-startup-id picom --config ~/.config/picom/picom.conf
 exec_always --no-startup-id bash -c "sleep 0.5 && picom --config ~/.config/picom/picom.conf"
 exec --no-startup-id xset s off
@@ -132,7 +134,7 @@ set $border_unfocused $text_light
 # i3bar
 bar {
    status_command i3blocks
-   font pango: Exo Medium 10
+   font pango: BitGridSingle 10
    position top
    
    colors {
@@ -141,8 +143,10 @@ bar {
         separator          $accent_blue # separator color
 
         focused_workspace  $bg_dark $bg_dark $text_light    # border block text 
+        #focused_workspace  #000000 #ffffff #000000 # border block text 
         active_workspace   $bg_dark $bg_dark $accent_blue   # border block text 
         inactive_workspace $bg_dark $bg_dark $accent_blue   # border block text 
+        #inactive_workspace #000000 #005f1f #ffffff # border block text 
         urgent_workspace   $bg_dark $bg_dark $accent_blue   # border block text 
    }
    mode dock

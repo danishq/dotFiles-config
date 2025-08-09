@@ -7,8 +7,8 @@ SAVEHIST=200000
 # ─── Path ─────────────────────────────────────────────
 export PATH="$HOME/.local/bin:/usr/local/bin:$PATH"
 
-# ─── Java & Maven ─────────────────────────────────────
-export JAVA_HOME=/usr/lib/jvm/java-17-openjdk
+# Use system default Java (currently Java 21)
+export JAVA_HOME=/usr/lib/jvm/default
 export M2_HOME=/opt/apache-maven
 export PATH="$JAVA_HOME/bin:$M2_HOME/bin:$PATH"
 
@@ -84,11 +84,17 @@ alias condabase='conda deactivate && conda activate base'
 alias st='speedtest'
 alias mvnc='mvn compile'
 alias gits='git status'
-alias gpush='git push origin main'
+alias gita='git add .'
+alias gitcm='git commit'
+alias gitps='git push -u origin main'
 alias i3bind='cat ~/Documents/LinuxCommandAndKeyBinds/keyBindsi3.txt'
 alias aptpac='cat ~/Documents/LinuxCommandAndKeyBinds/apt_to_pacman_commands.txt'
 alias mountmech='cd ~ && ./.mount.sh'
-alias task='cd ~ && ./taskell'
+alias taskmangrove='cd ~ && ./taskell ~/Documents/taskell_Notes/mangrove.md'
+alias tasknotes='cd ~ && ./taskell ~/Documents/taskell_Notes/taskell.md'
+alias ideash='cd ~/Documents/zipAndApps/idea-IC-251.27812.49/bin/ && ./idea.sh'
+alias jscode='cd ~/Documents/Projects/jsCodes && nvim'
+
 
 # ─── NVM ───────────────────────────────────────────────
 export NVM_DIR="$HOME/.nvm"
@@ -96,11 +102,10 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
 
 # ─── NVIM Custom Function ──────────────────────────────
-function nvim() {
-  setxkbmap -option caps:escape      # Remap Caps Lock to Escape
-  command nvim "$@"                  # Launch Neovim with all arguments
-  setxkbmap -option                  # Reset Caps Lock back to normal
-}
-
-#Timer
-alias timer="~/timer_final.sh"
+#function nvim() {
+#  setxkbmap -option caps:escape      # Remap Caps Lock to Escape
+#  setxkbmap -option escape:caps
+#  command nvim "$@"                  # Launch Neovim with all arguments
+#  setxkbmap -option                  # Reset Caps Lock back to normal
+#}
+setxkbmap -option altwin:swap_alt_win

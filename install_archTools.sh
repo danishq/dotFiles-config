@@ -41,3 +41,4 @@ echo "📘 Updating tldr cache..."
 tldr --update
 
 echo "✅ All tools installed successfully!"
+
