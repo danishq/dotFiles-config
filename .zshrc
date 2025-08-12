@@ -101,11 +101,3 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
 
-# ─── NVIM Custom Function ──────────────────────────────
-#function nvim() {
-#  setxkbmap -option caps:escape      # Remap Caps Lock to Escape
-#  setxkbmap -option escape:caps
-#  command nvim "$@"                  # Launch Neovim with all arguments
-#  setxkbmap -option                  # Reset Caps Lock back to normal
-#}
-setxkbmap -option altwin:swap_alt_win

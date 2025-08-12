@@ -5,6 +5,7 @@ font pango:Victor Mono 8
 exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 exec --no-startup-id nm-applet
 exec --no-startup-id sh -c "sleep 1 && feh --bg-scale ~/Pictures/wallhave-shinchan.png"
+exec "feh --bg-scale ~/Pictures/wallhaven-shinchan.png"
 
 exec --no-startup-id xsetroot -cursor_name left_ptr
 exec_always --no-startup-id xrdb -merge ~/.Xresources
@@ -134,7 +135,10 @@ set $border_unfocused $text_light
 # i3bar
 bar {
    status_command i3blocks
-   font pango: BitGridSingle 10
+   #font pango: BitcountGridSingle Light 12
+   #font pango: BitcountGridSingle_Roman Light 12
+   #font pango: Doto Bold 10
+   font pango: Exo Regular 10
    position top
    
    colors {
